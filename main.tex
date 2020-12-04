@@ -1,0 +1,187 @@
+
+\documentclass[orivec,a4paper,10pt, draft]{llncs}
+%\usepackage{fullpage}
+\pagestyle{plain}
+\bibliographystyle{splncs03}
+
+
+
+%%%%%% - Start packages - %%%%%%
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{appendix}
+\renewcommand\appendixname{Supplementary Material}
+\renewcommand\appendixpagename{Supplementary Material}
+% xcolor should be early
+\usepackage[hyperref]{xcolor}
+\usepackage{times}
+
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{dashbox}
+\usepackage{xparse}
+\usepackage{xargs}
+\usepackage{struktex}
+\usepackage{upgreek}
+\usepackage{paralist}
+%\usepackage{pifont}
+%additional definition environnement
+%\input{additional}
+
+
+% Games
+\usepackage{nicodemus} % graphics for game definitions
+%\usepackage{bpmarker} % to measure out figure widths
+%\markerstrue % comment out this line to remove visible red markers on game code
+\newcommand{\codescalefactor}{1.0}
+
+
+
+% Graphics
+\usepackage{tikz} % graphics
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations,decorations.text}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes,arrows,matrix, positioning,calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+
+% Useful tools
+%\usepackage[pass]{geometry} % to change margins
+%\usepackage{subfigure} % to have two figures next to each other
+\usepackage{stmaryrd}  % for double-brackets "[[ ... ]]" per \llbracket and \rrbracket
+\usepackage{mathtools} % to use \coloneqq ( := )
+%\usepackage[normalem]{ulem} % For \ul (un­der­line) that breaks over line ends
+%\usepackage{xifthen} % for \ifthenelse and \isempty
+%\usepackage{ifthen} % for \ifthenelse and \isodd
+%%\usepackage[normalem]{ulem} % For \ul (un­der­line) that breaks over line ends
+%\usepackage{bbm} % to define a proper \mathbb{1} for the characteristic function
+\usepackage{booktabs} % makes tables look nicer
+%\usepackage{enumitem} % to use [nosep] as an argument of itemize
+\usepackage{comment} % comment sections
+\usepackage{todonotes} % todo: uncomplished stuff marks
+
+% hyperref should be (almost) last
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{hypcap} % Refs to Figures et al. link to the top of the figure instead of the caption
+\providecolor{DarkBlue}{rgb}{0,0,.545} % from svg
+\providecolor{DarkGreen}{rgb}{0,.392,0} % from svg
+\hypersetup{citecolor=DarkGreen}
+\hypersetup{linkcolor=DarkBlue}
+\hypersetup{urlcolor=DarkBlue}
+\usepackage[noabbrev,capitalize]{cleveref} % cref must always be after hyperref
+%\usepackage{cleveref}
+\crefname{nicocodei}{line}{lines} % make cref work with nicodemus lines
+%\newcommand{\creflastconjunction}{, and\nobreakspace} % oxford comma in \cref
+%\crefname{appendix}{Supplementary Material}{Supplementary Material} % Change every occurrence of "Appendix" to "Supplementary Material"
+\usepackage{pgfplots}
+\usepackage{pifont}
+\usepackage{nicefrac}
+
+\DeclareMathAlphabet{\mathsc}{OT1}{cmr}{m}{sc}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+
+
+\usepackage[
+    keys,
+    adversary
+]{cryptocode}
+\usepackage{comment}
+
+
+%%%%%% - End packages - %%%%%%
+
+%\input{commands}
+%\renewcommand\appendixname{Supplementary Material}
+%\renewcommand\appendixpagename{Supplementary Material}
+
+\title{}
+
+%\author{}
+%\institute{}
+
+
+
+
+\usepackage{paralist}
+\renewenvironment{itemize}{\begin{compactitem}}{\end{compactitem}}
+\renewenvironment{enumerate}{\begin{compactenum}}{\end{compactenum}}
+\renewenvironment{description}{\begin{compactdesc}}{\end{compactdesc}}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+
+\keywords{%%
+	
+}
+
+
+
+%%%%%% - Input Tex Files - %%%%%%%
+
+
+
+% one-liner to setup cryptobib:
+%$ if git rev-parse --git-dir > /dev/null 2>&1; then git submodule add https://github.com/cryptobib/export cryptobib; cd cryptobib && git pull origin master && git submodule update --init . && cd ..; else echo "Error: this is not a valid git repository."; fi
+% details:
+%# add the submodule:
+%$ git submodule add https://github.com/cryptobib/export cryptobib
+%# change directory to cryptobib folder and update content:
+%$ cd cryptobib && git pull origin master;
+%# automatically retrieve submodule commits after clone or pull
+%$ git submodule update --init;
+
+
+%\bibliography{cryptobib/abbrev3,cryptobib/crypto,additional}
+
+\bibliography{cryptobib/abbrev3,cryptobib/crypto,add}
+
+%\newpage
+%\newgeometry{hmargin={3.2cm,3.2cm},vmargin={4cm,4cm}}
+%\bigskip\noindent{\Huge\textbf{Supplementary material}}\vspace{1cm}
+
+
+%\newpage
+\appendix
+%\noindent {\huge{Supplementary Material}}%\normalfont
+%\vspace{0.3cm}
+%\newline
+%\input{omittedpf-corricdh}
+
+
+
+
+
+% The next lines are used to append the ToC to the very last page of the document if said page has an odd page number. Motivation: a printout of the document would have the ToC on the rear.
+% Comment out to disable.
+%{\label{lastpage}}%
+%\ifthenelse{\isodd{\pageref{lastpage}}}{%
+%	% if odd page number
+%	\vfill\pagebreak%
+%	\setcounter{tocdepth}{2}%
+%	\tableofcontents%
+%}{%
+%	% if even page number
+%}%
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
